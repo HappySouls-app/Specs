@@ -1,0 +1,170 @@
+Chris (H) : Du coup ce qui pourrait être intéressant c'est de commencer à brainstormer, tu vois, et de créer des documents sur comment est-ce qu'on s'y prendrait pour faire une biographie. Parce qu'à un moment donné, il va falloir, il va falloir demander à l'IA, clairement.
+Elo (F) : Oui c'est vrai, demander à l'IA toutes les questions qu'il faudrait poser à quelqu'un pour découvrir un peu sa vie, quoi, pour une autobiographie, ou une biographie.
+Chris (H) : Et le truc, c'est que je pense qu'il y a des questions qui sont ouvertes, enfin, c'est quoi le nom, le lieu de naissance, la date de naissance, des choses comme ça.
+Elo (F) : Est-ce qu'on inclut les parents, les grands-parents, etc ? Je ne sais pas trop en fait, ça va dépendre de ce que les gens ont envie de raconter.
+Chris (H) : Ouais, mais si jamais ils ne parlent pas de leur famille de manière générale ? Tu vois, par exemple, moi j'ai lu des autobiographies...
+Elo (F) : Ouais, mais ça c'est des autobiographies qui sont écrites d'une manière très particulière, là on parle de permettre à n'importe qui de transmettre son histoire de vie à d'autres.
+Chris (H) : Mais en même temps, tu disais, pour les personnes qui potentiellement ont Alzheimer ou des personnes âgées, etc., donc, effectivement parler de ses propres parents, de son enfance, de ce qu'on se souvient de sa famille, donc grands-parents, parents, oncles, tantes, frères, sœurs.
+Elo (F) : Et tu vois, par exemple, si la personne cite son frère, il faut que l'IA lui demande comment il s'appelle.
+Chris (H) : Oui, il faut que l'IA puisse rebondir aussi sur des informations pour compléter des informations, parce que je pense que c'est ça le métier de biographe, tu vois ?
+Elo (F) : Oui, c'est sûr.
+Chris (H) : Et puis, après ça, essayer de rentrer dans le détail quand c'est nécessaire, et à l'inverse, pouvoir ouvrir. Tu vois, je sais pas si tu as envie de raconter un épisode de, "Ah, je me souviens quand j'allais au tabac avec mon père," et cetera, bon, tu vas parler de ça et tu vas te remémorer ces moments-là, son sourire quand il avait fini au tabac et que je le voyais apparaître, et cetera.
+Elo (F) : Oui, ou même l'IA pourrait demander quelle anecdote particulière de ce...
+Chris (H) : Mais après, l'IA peut te demander, "Bah, est-ce que vous avez d'autres anecdotes comme ça sur lesquelles vous aimeriez revenir aujourd'hui ? Est-ce que vous voulez y revenir un autre jour ?" Parce que c'est pas un truc que tu vas faire en un jour, tu vois ? Au contraire, l'idée c'est que ce soit...
+Elo (F) : Oui, oui, c'est sûr.
+Chris (H) : C'est une idée qui est fascinante, en fait.
+Elo (F) : Carrément.
+Chris (H) : D'essayer d'avoir un agent qui va travailler avec toi jusqu'à ce qu'à un moment donné tu dises, "Bah tiens, sors-moi mon bouquin."
+Elo (F) : Pas mal. Purée, j'espère, j'espère que ça pourrait marcher avec des gens comme Elon Musk, qui n'ont pas envie de s'embêter avec quelqu'un.
+Chris (H) : Mais Musk il est capable de dire, "Je veux que la planète entière ait ça, et puis on met tout sur des disques durs et on envoie tout sur Mars," tu vois ? Non mais en plus, c'est exactement le genre de délire que des gens comme ça pourraient avoir, de se dire, "Mais clairement, il faut préserver la mémoire de l'humanité. On ne fait plus de bébés, la croissance..."
+Elo (F) : C'est ça ! Du coup ça fait, ouais, ouais, parce qu'après il y aurait aussi l'autobiographie de certaines personnes, tu vois, des chercheurs, n'importe quoi. Oh, ce serait génial.
+Chris (H) : Ouais, ouais. Et puis, tu vois pourquoi ça m'excite ce truc ? Parce que je trouve que ça a une portée humaine. Et je pense que ça peut avoir un impact sur les familles, parce que tu vas transmettre quelque chose. Et regarde nous aujourd'hui, on ne connaît pas l'histoire, la vie de nos grands-parents, on connaît à peine la vie de nos parents, tu vois ? Ce qu'on sait, mais à peine.
+Elo (F) : Mais à peine.
+Chris (H) : Et aujourd'hui, bon, moi je ne vais pas voir ma mère, mais je ne vais pas lui rappeler son passé si elle commence à oublier, tu vois ?
+Elo (F) : Mais on peut prévenir ça pour les générations futures.
+Chris (H) : Mais on peut prévenir ça pour les générations futures.
+Elo (F) : Et c'est pas ça, c'est que les générations futures n'auront pas peur de l'IA, et elles n'ont pas peur non plus de raconter leur vie. Donc, ça ne va pas les choquer, au contraire, ils vont se dire, "Bah oui, en fait, enfin voilà."
+Chris (H) : Et puis, je veux dire, tu sais, aujourd'hui les gens ont compris qu'en prenant des photos, ils avaient des souvenirs de leur vie, tu vois, et ça enregistre un peu leur vie. Un peu. Il y a des gens qui écrivent leurs journaux intimes. Ma grand-mère, elle écrivait un truc dans un journal intime tous les jours.
+Elo (F) : Ah ouais ?
+Chris (H) : Ouais. J'ai...
+
+Chris : ...toi de faire l'effort d'apprendre à écrire un livre.
+Elo : Ouais, c'est bien ça. Mais par contre l'IA peut l'écrire pour toi.
+Chris : Mais l'IA peut l'écrire, va l'écrire pour toi et t'as pas besoin de lui dicter. C'est pas que tu lui dictes ta vie, tu lui dictes pas un livre. Elle va écrire un livre, si tu veux un livre elle va écrire un livre. Si tu veux une frise de ta vie etc., elle te fera une frise de ta vie aussi. Si tu veux une BD elle te fera une BD.
+Elo : Si tu veux un arbre généalogique peut-être, tu vas...
+Chris : Une narration à la troisième personne, elle te fera une narration à la troisième personne : "Chris naquit, blablabla".
+Elo : Oui, parce que le style de littéraire peut s'adapter aussi.
+Chris : Voilà, complètement.
+Elo : Ça peut être version journal aussi.
+Chris : Ça peut être version journal, il peut réécrire en version journal : "Aujourd'hui j'ai 18 ans", j'en sais rien moi, tu vois ?
+Elo : Et ça, ça peut être énorme aussi. C'est plutôt pas mal. Ça t'emballe, non ?
+Chris : Je vois un potentiel incroyable. Et ben écoute, voilà. Ça fait déjà un moment que je me dis que de la manière dont je travaille pour le code, c'est pas très différent d'écrire un livre. Dans le sens où je commence toujours par essayer de travailler sur la trame globale, tu vois, qu'est-ce que je vais développer ? Je veux développer un jeu, je veux développer quoi que ce soit, et prendre des notes dessus, machin tout ça. Et puis donner à l'IA, demander à l'IA de décomposer en chapitres, tu vois ? C'est pas des chapitres, mais ça va être des phases d'implémentation que je vais pouvoir tester séparément, comme des chapitres que tu peux faire lire séparément par des gens. Puis après tu travailles phase par phase jusqu'à ce que ça passe tes tests. Et tu travailles tes chapitres jusqu'à ce qu'ils te plaisent et tu les retravailles et cetera jusqu'à et tu corriges les fautes et tu machin et tu trucs, tu vois ? Et ça ressemble vraiment beaucoup à écrire un livre. Donc je m'étais déjà dit, ça serait presque drôle d'utiliser les mêmes techniques pour écrire un livre, voir ce que ça donne quoi, tu vois, un roman ou quoi que ce soit. Mais en fait...
+Elo : Ben en fait, ça peut être autre chose.
+Chris : C'est peut-être autre chose qu'on fera écrire. Et en mode agence, c'est-à-dire que ben tant que t'as pas fini, t'as du boulot. C'est un mode très différent de ce que tu vois avec ChatGPT où tu poses une question, t'as une réponse, tu poses une question, t'as une réponse. Là, c'est pas nécessairement ça.
+Elo : Oui, là c'est un travail de fourmi, réunion de... tu réunis pas mal d'informations au même endroit, tu développes, tu détailles, tu peaufines et...
+Chris : Tu sais tout ce qui a été fait avant. Donc tu sais les trous dans la vie de la personne par exemple, donc tu sais lui poser la question de savoir : bon, et maintenant on travaille sur quoi ?
+Elo : Et quand est-ce que tu sais que c'est fini ?
+Chris : Quand on te le dit. C'est pas l'IA qui peut le savoir. Soit toi tu vas dire : bon ben voilà, j'aime ma biographie, j'ai envie de l'arrêter là ou de la sortir là ou j'ai envie que tu m'imprimes maintenant ma biographie, whatever. Genre tu lances ton programme, tu dis : bah ça y est c'est bon, je peux le vendre à mes clients, c'est pareil. Soit tu vas considérer que bah c'est un travail que tu vas faire à vie plus ou moins, machin et cetera, et puis que tu l'égaras et puis voilà, ce sera quand tu seras mort que ta biographie s'arrêtera, j'en sais rien moi.
+Elo : Ouais, mais du coup concrètement sur l'app, ça se passe comment ? Parce que du coup ça récolte beaucoup d'informations. Est-ce qu'à chaque fois ça fait des fiches ?
+Chris : Ça va faire des résumés sans arrêt. Ça va faire des résumés de discussions, des structures...
+Elo : Ouais, et du coup ça met déjà en forme.
+Chris : Tenir une frise chronologique de tous les événements dont on parle avec la référence pour pouvoir retrouver tous les trucs. Tout va être indexé en fait. Donc ça va faire un travail de... un travail un peu comme tu ferais pour écrire un livre où t'as besoin de documenter, tu vois, ton codex. En fait ça va faire un codex.
+Elo : Et les gens auront accès à ce codex-là déjà d'entrée de jeu ? Ou il n'y aura que l'agent IA qui y aura accès ? Parce qu'il faut pas que les gens se lassent, tu vois, il faut que les gens arrivent à voir où est-ce qu'ils en sont.
+Chris : Alors on peut leur faire ça aussi, tu vois. À mon avis on peut demander à l'IA de faire une évaluation de : "Où est-ce que t'en es ?", "Qu'est-ce que tu penses ?", quoi, tu vois ?
+Elo : Pour que les gens puissent voir. Parce que j'aurais un peu peur moi que si les gens voient pas de résultat avant le résultat final, qu'ils se lassent, qu'ils décrochent et qu'ils se disent "C'est un peu de la merde".
+
+Chris: Ah oui, je pense que ça peut écrire des chapitres. En fait, une fois qu'on… une fois que tu as travaillé sur…
+Elo: …sur un morceau.
+Chris: Voilà, je sais pas, nous… imagine, nous on raconte, bah voilà, on raconte la Martinique. Et tu peux sortir le chapitre Martinique. Si t’as… tu pourras revenir dessus, tu vois, c’est pas la question. Mais tu peux sortir le chapitre Martinique.
+Elo: Et du coup, c’est ça, ils auront quand même le truc qu’ils ont déjà travaillé, ils auront un visuel à regarder, à lire et à profiter, quoi.
+Chris: J’entends. Et puis euh… je pense qu’ils pourront regarder par exemple la frise de leur…
+Elo: …de leur vie.
+Chris: …de leur vie, au fur et à mesure qu’ils la remplissent.
+Elo: Ouais, c’était ça que je te demandais, tu vois. Est-ce qu’ils auront quand même quelque chose à regarder ?
+Chris: Ah ouais, je pense qu’il faut… il faut qu’il y ait ça, ouais.
+Elo: Ouais, ouais. Tu vois, un peu comme un plan.
+Chris: Voilà. Mais même si j’aimerais… j’aimerais beaucoup qu’ils n'aient pas besoin d’aller voir la frise de se dire : « Bon, qu’est-ce qu’il manque ? ». J’aimerais que ce soit l'IA qui se dise : « Qu’est-ce qu’il manque ? ».
+Elo: Ça, j’entends. C’est pas pour se dire « qu’est-ce qu’il manque ? », c’est juste pour regarder la frise et se dire : « Ah, c’est cool ». Hum, parce que tu vois, ça pourrait leur faire du bien aussi de se dire : « Bah, j’aime bien ma vie ».
+Chris: C’est sûr qu’il y a ça aussi, tu vois, c’est… tu te sentiras forcément plus vivant en repassant tous les événements de ta vie et compagnie. Hum, ouais, c’est clair. Tu te dis : « Ah putain, j’ai vécu tout ça quand même ».
+Elo: Ouais, parce que les gens ont pas forcément beaucoup de recul sur leur vie.
+Chris: Ouais, ils sont vachement bloqués dans leur… dans leur présent.
+Elo: …et dans leur problématique…
+Chris: …et dans leur routine du moment.
+Elo: …et dans leur routine du moment… et pas dans leur… « Bah oui, mais j’ai fait tout ça, j'ai quand même vécu tout ça et tout, c’était cool ».
+Chris: Voilà. Ils auront plutôt… Donc en fait, ça peut faire du bien aussi aux gens. Voilà, raconter la naissance de tes enfants, et cetera. Tu vois, c’était plus… plus fun que… que de les entendre se chamailler.
+Elo: Bah, ça dépend des naissances, mais…
+Chris: Whatever, mais tu vois ce que je veux dire.
+Elo: Ouais, tout à fait.
+Chris: Je pense que ça peut avoir un… un effet… Je sais pas, je vois ça comme absolument génial et magique et tout ce que tu veux, quoi. Je me dis, tous les psys peuvent se retrouver à recommander ça aux gens parce que… bah ça serait des enfoirés de pas le faire, quoi, tu vois. Tout le monde… tout le monde en termes de santé mentale, ça ferait du bien à tout le monde de revenir un peu là-dessus, quoi, tu vois.
+Elo: Tout à fait. Et puis même, à partir de… j’en sais rien, moi, tu passes 50 ans, 60 ans, 70 ans, t’as envie, tu vois, de te dire : « Bah j’ai déjà fait le bilan jusque-là » et puis tous les dix ans je le remets à jour parce que je suis toujours vivant. Et du coup, après je lègue ma mini Bible, quoi. Ma vie, mon œuvre.
+Chris: (Rires)
+Elo: On peut l'appeler « Ma vie, mon œuvre » ? On l'appellera pas « Ma vie, mon œuvre », mais…
+Chris: À mon avis, c’est… c’est vraiment le truc qui peut… Ouais, qui peut changer la relation que les gens ont avec leur histoire, leur vie.
+Elo: Je suis d’accord.
+Chris: Genre : « Il y a quelqu'un qui s’intéresse à ma vie ». Parce qu'aujourd’hui, globalement, il n'y a personne qui s’intéresse… Alors on passe son temps… les psys passent leur temps à dire aux gens : « Non mais les gens, ils n'en ont rien à foutre de votre vie, alors faites… menez votre vie comme vous avez envie ». Ça, c’est bien comme message.
+Elo: Oui.
+Chris: Mais ils entendent aussi : « Les gens n'en ont rien à foutre de ma vie ». Et ça… et tu regardes…
+Elo: Ouais, c'est clair.
+Chris: Il y a un message subliminal négatif. Et inversement, quand tu vois tous les gamins aujourd’hui TikTokers qui se disent : « Putain, si je suis pas millionnaire à 25 ans, j’ai raté ma vie » et compagnie… Ouais, le regard sur sa vie et cetera, et s’interroger un peu et se dire : « Bon, qu’est-ce que j’ai vécu déjà, machin… Ah ouais, machin ».
+Elo: Eh bah tu sais quoi ? On disait, on peut le monter en BD, en manga, en roman, on peut en faire une vidéo aussi. Parce que je pense qu’il y a des IA qui peuvent après rattacher… Je sais pas si ça se fait déjà maintenant, mais un jour, j’imagine, tu donnes un fichier…
+Chris: Ouais, à mon avis ça… il faudra pas très longtemps.
+Elo: Voilà. Et du coup, bah ils auront un fichier en disant : « Montre-moi le film de ma life ».
+Chris: Après, malheureusement, ça sera jamais fidèle.
+Elo: C’est pas grave.
+Chris: Mais par contre ça peut être le…
+Elo: Mais ça va être « Montre-moi l’animé de ma vie », quoi. C’est pas grave, en fait. Juste si c’est sous format whatever, c’est pas obligé que ce soit… Oui, parce qu’après il n'y a pas forcément les visages, il n'y a pas forcément… Mais c’est pas grave.
+Chris: Et puis… et puis ça ressemblera pas à ce qu’il y a dans ton souvenir, tu vois. Tu vois la différence entre ce que tu imagines dans un livre et des fois la réalité qu’imagine l’auteur ou quoi.
+Elo: Ouais, ça j’entends, j’entends.
+Chris: Mais ça fera ça avec la BD, de toutes les manières.
+Elo: Ça fera ça aussi avec la BD, dans une certaine mesure, tout à fait.
+
+
+Elo : Tout à fait. Donc c’est un peu dommage, à moins de collecter des photos.
+Chris : Après, s’il y a des photos et compagnie, il y a peut-être moyen, tu vois aussi de faire…
+Elo : Du coup, est-ce que depuis une photo, est-ce que l’IA pourra reprendre un petit peu ?
+Chris : Un peu, un peu, ouais. Aujourd’hui elles arrivent à faire ça, hein, tu mets… tu donnes des photos et puis elles te font des… même des versions BD de toi. Donc ce sera… en BD en fait, c’est pas mal parce que ça n’a pas besoin d’être hyper ressemblant contrairement à une vidéo.
+Elo : Oui c’est sûr.
+Chris : Une vidéo, tu vas dire : « Ah, c’est pas moi ». Une BD, tu vas dire : « Bon, c’est une BD ».
+Elo : Ouais, voire même des caricatures.
+Chris : Voilà.
+Elo : Non parce qu’il y en a qui vont préférer des caricatures, donc parce qu’ils vont pas s’aimer, tu vois, ceux qui ont pas leur image, ils vont préférer des personnages, des chats. Monte ma vie sous forme de chat.
+Chris : Ouais.
+Elo : Après il y a tout qui est possible quoi.
+Chris : Ah non mais c’est…
+Elo : Moi en petit bonhomme de je sais pas, version Sims quoi, enfin pas Sims parce qu’il faut payer des droits, mais des Soussone, tu vois des trucs comme ça là.
+Chris : Bon, sans aller explorer tout ça, tu vois, l’idée de base elle me paraît tellement grande, parce que tout à coup t’as tout le monde qui est capable d’écrire sa vie et mine de rien on en a qu’une, tous intimement on a conscience, tu vois, de l’importance de notre vie, eh ben je pense que ça ferait réaliser aux gens à quel point leur vie est importante aussi.
+Elo : Ouais. Eh ben tu sais quoi, plutôt que de donner les photos à l’IA, parce que ça les gens ils aiment pas trop, mais pour la version roman, une fois montée, laisser, tu vois, si jamais ils veulent imprimer, laisser de la place pour mettre des photos et ils viennent intégrer les photos.
+Chris : Ouais, mais les gens ils mettent leurs photos sur Facebook, hein, tu sais donc…
+Elo : Oui mais ils savent… oui mais d’une certaine mesure, il y a des gens que Facebook c’est une chose, l’IA c’est une autre.
+Chris : Il y a des gens qui voudront pas parler à l’IA de leur vie.
+Elo : Voilà, mais c’est pas grave, tu vois, ils auront la possibilité soit d’uploader des photos et du coup c’est l’IA qui les mettra au bon endroit, au bon moment et du coup après ils impriment et il y a la photo, c’est cool. Soit alors eh ben il y a des encadrés prévus, tu vois, un petit peu comme un album photo, c’est un album, tu vois.
+Chris : Trop compliqué. Si jamais il faut que tu commences à aller mettre les photos au bon endroit…
+Elo : Bah à ce moment-là si tu veux pas de photos, tu veux pas de photos, tu vois, c’est…
+Elo : Moi je trouve ça intéressant.
+Chris : Non parce que l’app, ce que tu puisses mettre les photos après ou que tu donnes les photos à l’IA et qu’elle les mette elle, l’app elle a les photos. Donc ça change rien en fait. Les gens ils vont… s’ils veulent pas mettre leurs photos, ils mettront pas leurs photos.
+Elo : Non, c’est… je me suis mal exprimée. Je te disais : une fois qu’ils choisissent la version roman, ils peuvent dire « Bah là moi je voudrais mettre une photo par exemple », ou alors l’IA peut poser la question « Est-ce que tu voudrais agrémenter d’une photo ? ». Les gens ils ont plein de photos. Nous on n’en a pas, mais les gens ils ont plein de photos. S’ils le font imprimer, il y aura l’emplacement pour mettre les photos. Et du coup tu as ton autobiographie avec quelques photos dedans.
+Chris : Ah d’accord.
+Elo : Des vraies photos à toi. Un peu en mode comme un album photo, mais du coup il n’y en a que quelques-unes.
+Chris : C’est très compliqué à mon avis de faire quelque chose qui est bien. Parce que là du coup c’est plus l’IA qui va pouvoir décider et cetera, tu vois, ça va dépendre des gens. « Ah mais non mais la photo elle est dans le mauvais sens ».
+Elo : Mais non, t’as pas compris.
+Chris : Mais si ! Si tu laisses la place de mettre une photo, est-ce qu’elle est horizontale ou est-ce qu’elle est verticale ? Quel format elle a ?
+Elo : Eh ben tu peux lui demander ça.
+Chris : C’est un…
+Elo : Ah d’accord. Ou alors laisser juste une page blanche en mode s’il veut y avoir une photo, t’es pas obligé de mettre l’encadré, tu peux laisser une page blanche.
+Chris : Ça me paraît… ça me paraît un craquage de tête.
+Elo : Ah ouais ? Bah c’est dommage, moi je pense que j’aurais bien aimé avoir ça. Mais voilà, c’est pas une obligation.
+Chris : Ça me paraît un craquage de tête. Ouais, autant avoir des photos en format informatique et cetera et puis les insérer dans les… avec la bonne date qui va chercher dans la… dans le fichier machin, ça c’est cool tu vois, ou même carrément tu connectes ton Facebook et il va récupérer tes photos, mais… mais sinon c’est…
+Elo : Ouais.
+Chris : Ouais, tout à coup tu deviens un programme pour faire des… pour faire des albums photos quoi, c’est pas le même… c’est pas le même délire. Tout à coup c’est tu prends ta souris et tu… tu cliques et tu…
+Elo : Ouais, ouais, je comprends, je comprends.
+Chris : Mais… mais par contre pour revenir à l’idée, ouais, ça me paraît fou de se dire que ouais ça pourrait permettre à tout le monde de revenir sur sa vie, de réaliser l’importance de sa vie.
+Elo : Ouais.
+
+Chris: Tu sais aujourd'hui quand tu vois des... des gens comme... comme Jeremy.
+Elo: Lequel ?
+Chris: Euh... celui qui devrait se soucier un peu plus de sa vie, euh... et réaliser un peu plus l'importance que sa vie peut avoir maintenant qu'il a des gosses et ainsi de suite.
+Chris: Je pense que... bah c'est exactement le genre de personnes en fait qui s'ils revenaient sur leur vie, s'ils écrivaient leur vie et cetera, s'ils écrivaient leur... leur galère, leur machin, leur truc et compagnie s'disaient: "Merde, hé, faut que je fasse quelque chose quoi."
+Chris: Histoire qu'elle s'arrête pas...
+Elo: Ouais, j'entends. Je... Je vais être honnête avec toi, je pense que ce genre de personnage Jeremy, euh... ça marcherait pas du tout en fait.
+Chris: Peut-être. Ou alors peut-être qu'il a un ego tel que il aimerait que... ou alors déjà qu'il se dit qu'il risque de crever et que donc il aurait envie que ses enfants sachent qui était leur père, parce que ça c'est pas... c'est pas acquis.
+Elo: Oui, c'est sûr que de toute manière il se voit pas forcément... euh... vivre jusqu'à l'âge adulte de...
+Chris: Et imagine un gamin qui perd... qui perd son père ou qui perd sa mère et cetera, ouais, il peut avoir l'histoire de son père, l'histoire de sa mère racontée par son père ou sa mère.
+Elo: C'est clair. Puis même toutes les personnes qui sont malades aujourd'hui pourraient vite fait léguer quelque chose à leurs enfants à travers ça parce que... parce qu'ils se diraient: "Bah oui, c'est quelque chose qu'ils aimeraient même eux-mêmes avoir de leurs propres parents mais qu'ils auraient pas eu, et du coup ils le feraient."
+Chris: Voilà. Et au-delà de... de la version écrite, je veux dire si tu parles à l'app sans arrêt et ainsi de suite, moi je vais être obligé d'en... d'enregistrer ta voix hein, pour... pour retranscrire et compagnie.
+Elo: Oui.
+Chris: Et du coup ça laisse, tu vois, une trace de...
+Elo: Ouais.
+Chris: ...de toi qui racontes ta vie.
+Elo: C'est sûr.
+Chris: Enfin à mon avis ça a vraiment un... un potentiel de créer quelque chose qui est du même ordre... Tu sais j'étais photographe de mariage,
+Elo: Ouais, ouais.
+Chris: ...et je me... je voyais ça, je me disais: "C'est un morceau d'héritage familial que je crée avec eux en fait."
+Elo: Ouais, forcément.
+Chris: Et je vois ça comme ça, en plus encore.
+Elo: Et ouais.
+Chris: Plus encore parce que je... je raconte pas juste l'histoire du début de ton couple, de ton mariage et cetera, là c'est... tu racontes leur vie.
+Chris: Si tu fais l'album photo de leur vie en fait, mais pas en photo. En mots.
+Elo: Ouais. Et ben écoute, chouette idée.
+Chris: Je trouve ça fascinant.
+Elo: Carrément. Je stop ?
+Chris: Ouais. Est-ce que tu peux me le forwarder, me l'envoyer, me le partager...
