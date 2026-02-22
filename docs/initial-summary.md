@@ -69,7 +69,7 @@ The project will follow a **Software Development Lifecycle (SDLC)** approach app
 ## 5. Target Audience & Use Cases
 
 * **The "Elderly/Ill":** For those wishing to leave a trace for children/grandchildren before they pass or lose their memory.
-* **The "Ego-Driven":** High-achievers who want their "Life and Works" documented without hiring a human biographer.
+* **The "Ego-Driven" (secondary):** High-achievers who want their "Life and Works" documented without hiring a human biographer. Not the primary focus — their needs pull toward faster outputs and a more polished ghostwriting experience, which conflicts with the product's core design direction. May be addressed later.
 * **The "Self-Reflective":** Individuals who want structured life review and perspective on their journey (therapeutic impact is common, but not the product goal).
 * **The "Modern Youth":** Generations comfortable with AI who see this as a natural extension of digital memory (like an evolved Instagram).
 

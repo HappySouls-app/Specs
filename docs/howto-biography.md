@@ -190,49 +190,25 @@ Small details often open larger doors.
 
 ## 5. Contradiction and Depth Extraction
 
-The AI continuously monitors inconsistencies.
+The AI continuously monitors inconsistencies across sessions and logs them internally.
 
-Examples:
+The AI does not surface contradictions directly to the subject. Telling someone "you described yourself as X but your behavior was Y" puts them in a position of having to argue with or justify themselves to a machine — which is the wrong dynamic entirely.
 
-* You describe yourself as independent but sought validation from X.
-* You claim risk tolerance but avoided Y.
-* You value freedom yet chose structure.
+Instead, contradictions inform the questions the AI asks. If the Codex shows a tension between two stated positions, the AI explores the area through open questions, letting the person arrive at the nuance themselves.
 
-The AI does not accuse. It asks:
+Examples of internal flags that shape future questions (not statements made to the subject):
 
-* Help me reconcile these two patterns.
-* What were you optimizing for?
-* What were you protecting?
+* Subject claims independence but frequently describes seeking others' approval → ask about a time they went against consensus
+* Subject claims risk tolerance but avoided a significant opportunity → ask what held them back
+* Subject values freedom but chose structured environments → ask what drew them to that structure at the time
 
-Contradictions create psychological depth.
+The subject narrates. The AI listens and probes. It does not confront.
 
 ---
 
 ## 6. Artifact Integration
 
-Memories are strengthened with artifacts.
-
-Potential sources:
-
-* Emails
-* Code repositories
-* Git commits
-* Social media posts
-* Photos
-* Financial records
-* Calendar entries
-* Blog posts
-* Meeting notes
-
-Each artifact is linked to:
-
-* Date
-* Context
-* Emotional state
-* Decision outcome
-* Related people
-
-Artifacts anchor narrative to reality.
+*Deferred. The initial version is text-only. Artifact ingestion (emails, photos, documents, social media exports) will be considered in a later phase once the core interview system is stable.*
 
 ---
 
@@ -312,9 +288,13 @@ Each turning point contains:
 
 ### 7.6 Theme Clusters
 
-Themes are extracted via pattern detection:
+Themes are extracted via pattern detection and stored as internal synthesis tooling only.
 
-Examples:
+They are never presented to the subject as labels or conclusions. The subject is not told "your dominant theme is recognition-seeking." That's interpretation imposed without consent, and it puts the AI in the role of analyst rather than collaborator.
+
+Theme clusters shape the questions the AI asks and eventually inform narrative construction — but the subject remains the author of their own story. If a theme is relevant, the AI explores it through questions, not declarations.
+
+Examples of internal theme flags:
 
 * Control vs autonomy
 * Risk appetite
@@ -324,7 +304,7 @@ Examples:
 * Isolation
 * Builder identity
 
-Each theme links to multiple memory entries.
+Each theme links to multiple memory entries and informs future session direction.
 
 ---
 
@@ -350,7 +330,6 @@ Possible outputs:
 
 * Chronological biography
 * Thematic biography
-* Psychological profile
 * Founder evolution story
 * Family legacy document
 * Documentary script
@@ -389,7 +368,6 @@ If memory stalls:
 * Shift to people.
 * Shift to sensory recall.
 * Shift to contrast.
-* Shift to artifacts.
 * Shift to belief evolution.
 * Shift to micro-moments.
 

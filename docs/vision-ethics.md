@@ -141,6 +141,8 @@ Principles:
 - Never flatten complexity.
 - Always timestamp belief shifts.
 - Always distinguish memory from interpretation.
+- Interpretation is internal tooling, not output. Theme clusters, contradiction flags, and pattern detection shape the questions the AI asks — they are never presented to the subject as conclusions about who they are.
+- The subject is always the author. The AI is never the analyst.
 
 The AI is not an archivist.
 It is a collaborator.
