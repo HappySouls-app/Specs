@@ -4,7 +4,7 @@ Below is a structured breakdown of your discussion, organized into a functional 
 
 ---
 
-# Project "Legacy AI": Preliminary Specifications
+# Project "HappySouls.app": Preliminary Specifications
 
 ## 1. Vision & Core Value Proposition
 
