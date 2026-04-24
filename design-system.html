@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappySouls — Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      /* — Color: Parchment (backgrounds) — */
+      --parchment-50:  #FDFAF5;
+      --parchment-100: #F7F1E6;
+      --parchment-200: #EDE3D2;
+      --parchment-300: #DFD2BB;
+
+      /* — Color: Ink (text & UI chrome) — */
+      --ink-900: #1A1612;
+      --ink-800: #2E2820;
+      --ink-700: #45392F;
+      --ink-500: #7A6E65;
+      --ink-300: #B5ABA4;
+      --ink-100: #EBE6E1;
+
+      /* — Color: Sienna (brand / primary) — */
+      --sienna-900: #4A1E14;
+      --sienna-700: #7D3628;
+      --sienna-500: #A84C39;   /* ← primary brand */
+      --sienna-300: #CE9082;
+      --sienna-100: #F5E5E0;
+
+      /* — Color: Gold (wisdom / legacy) — */
+      --gold-700:  #8B6820;
+      --gold-500:  #B8892E;
+      --gold-300:  #D4AE6A;
+      --gold-100:  #F5EDDA;
+
+      /* — Color: Sage (life / continuity) — */
+      --sage-700:  #3A5242;
+      --sage-500:  #527660;
+      --sage-300:  #8AAE98;
+      --sage-100:  #E2EEE7;
+
+      /* — Color: Semantic — */
+      --color-background:   var(--parchment-50);
+      --color-surface:      var(--parchment-100);
+      --color-surface-alt:  var(--parchment-200);
+      --color-border:       var(--parchment-300);
+      --color-text:         var(--ink-900);
+      --color-text-subtle:  var(--ink-500);
+      --color-text-faint:   var(--ink-300);
+      --color-brand:        var(--sienna-500);
+      --color-brand-dark:   var(--sienna-700);
+      --color-brand-light:  var(--sienna-100);
+
+      /* — Typography — */
+      --font-serif:     'Playfair Display', Georgia, 'Times New Roman', serif;
+      --font-reading:   'Lora', Georgia, serif;
+      --font-ui:        'Inter', system-ui, -apple-system, sans-serif;
+
+      /* — Type Scale (major third, 1.25×) — */
+      --text-xs:   0.75rem;    /* 12px */
+      --text-sm:   0.875rem;   /* 14px */
+      --text-base: 1rem;       /* 16px */
+      --text-lg:   1.25rem;    /* 20px */
+      --text-xl:   1.563rem;   /* 25px */
+      --text-2xl:  1.953rem;   /* 31px */
+      --text-3xl:  2.441rem;   /* 39px */
+      --text-4xl:  3.052rem;   /* 49px */
+      --text-5xl:  3.815rem;   /* 61px */
+
+      /* — Line Heights — */
+      --leading-none:    1.0;
+      --leading-tight:   1.15;
+      --leading-snug:    1.3;
+      --leading-normal:  1.5;
+      --leading-reading: 1.75;
+      --leading-loose:   2.0;
+
+      /* — Spacing (8pt grid) — */
+      --space-1:   4px;
+      --space-2:   8px;
+      --space-3:  12px;
+      --space-4:  16px;
+      --space-5:  20px;
+      --space-6:  24px;
+      --space-8:  32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      --space-24: 96px;
+      --space-32: 128px;
+
+      /* — Radii — */
+      --radius-sm:   4px;
+      --radius-md:   8px;
+      --radius-lg:  16px;
+      --radius-xl:  24px;
+      --radius-full: 9999px;
+
+      /* — Shadows — */
+      --shadow-xs:  0 1px 2px rgba(26,22,18,0.05);
+      --shadow-sm:  0 2px 6px rgba(26,22,18,0.07), 0 1px 2px rgba(26,22,18,0.04);
+      --shadow-md:  0 6px 16px rgba(26,22,18,0.09), 0 2px 4px rgba(26,22,18,0.05);
+      --shadow-lg:  0 16px 40px rgba(26,22,18,0.12), 0 4px 8px rgba(26,22,18,0.06);
+
+      /* — Motion — */
+      --duration-fast:       150ms;
+      --duration-default:    300ms;
+      --duration-slow:       500ms;
+      --duration-deliberate: 700ms;
+      --ease-standard:       cubic-bezier(0.4, 0.0, 0.2, 1);
+      --ease-decelerate:     cubic-bezier(0.0, 0.0, 0.2, 1);
+      --ease-accelerate:     cubic-bezier(0.4, 0.0, 1.0, 1);
+      --ease-gentle:         cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    /* ============================================================
+       BASE RESET
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--color-background);
+      color: var(--color-text);
+      font-family: var(--font-ui);
+      font-size: var(--text-base);
+      line-height: var(--leading-normal);
+    }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 250, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-4) var(--space-8);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-6);
+    }
+
+    .nav-brand {
+      font-family: var(--font-serif);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-brand span {
+      color: var(--color-brand);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      list-style: none;
+      overflow-x: auto;
+    }
+
+    .nav-links a {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text-subtle);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color var(--duration-fast) var(--ease-standard);
+    }
+
+    .nav-links a:hover { color: var(--color-text); }
+
+    .badge-preview {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-brand);
+      background: var(--color-brand-light);
+      padding: 2px var(--space-2);
+      border-radius: var(--radius-sm);
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 var(--space-8);
+    }
+
+    .section {
+      padding: var(--space-24) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-brand);
+      margin-bottom: var(--space-3);
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: var(--text-3xl);
+      font-weight: 500;
+      line-height: var(--leading-tight);
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      margin-bottom: var(--space-4);
+    }
+
+    .section-body {
+      font-family: var(--font-reading);
+      font-size: var(--text-lg);
+      line-height: var(--leading-reading);
+      color: var(--color-text-subtle);
+      max-width: 58ch;
+      margin-bottom: var(--space-12);
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      background: var(--parchment-50);
+      padding: var(--space-32) 0 var(--space-24);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-brand);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6vw, var(--text-5xl));
+      font-weight: 600;
+      line-height: var(--leading-tight);
+      letter-spacing: -0.03em;
+      color: var(--ink-900);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--color-brand);
+    }
+
+    .hero-sub {
+      font-family: var(--font-reading);
+      font-size: var(--text-xl);
+      line-height: var(--leading-reading);
+      color: var(--color-text-subtle);
+      max-width: 52ch;
+      margin-bottom: var(--space-12);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      font-size: var(--text-sm);
+      color: var(--color-text-faint);
+      font-weight: 500;
+    }
+
+    .hero-meta-item strong {
+      color: var(--color-text-subtle);
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       DESIGN PRINCIPLES
+    ============================================================ */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-10);
+    }
+
+    .principle-card {
+      background: var(--color-surface);
+      border: 1px solid var(--parchment-200);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+    }
+
+    .principle-number {
+      font-family: var(--font-serif);
+      font-size: var(--text-3xl);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--parchment-300);
+      margin-bottom: var(--space-4);
+    }
+
+    .principle-name {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+
+    .principle-desc {
+      font-family: var(--font-reading);
+      font-size: var(--text-base);
+      line-height: var(--leading-reading);
+      color: var(--color-text-subtle);
+    }
+
+    /* ============================================================
+       COLOR SYSTEM
+    ============================================================ */
+    .palette-group {
+      margin-bottom: var(--space-10);
+    }
+
+    .palette-group-name {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text-subtle);
+      margin-bottom: var(--space-4);
+      letter-spacing: 0.04em;
+    }
+
+    .palette-swatches {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      flex: 1;
+      min-width: 80px;
+      max-width: 140px;
+    }
+
+    .swatch-color {
+      height: 80px;
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-2);
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform var(--duration-fast) var(--ease-standard);
+      cursor: default;
+    }
+
+    .swatch-color:hover { transform: scale(1.04); }
+
+    .swatch-name {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .swatch-hex {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .swatch-usage {
+      font-size: 10px;
+      color: var(--sienna-300);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .semantic-tokens {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-3);
+      margin-top: var(--space-8);
+      padding: var(--space-6);
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+    }
+
+    .token-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .token-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .token-info { flex: 1; }
+    .token-name { font-size: var(--text-xs); font-weight: 600; color: var(--color-text); font-family: 'SF Mono', monospace; }
+    .token-desc { font-size: 11px; color: var(--color-text-faint); }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    .type-scale {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      margin-top: var(--space-10);
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: var(--space-6);
+      align-items: baseline;
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .type-row:last-child { border-bottom: none; }
+
+    .type-meta { text-align: right; }
+    .type-meta .size { font-size: var(--text-xs); font-weight: 600; color: var(--color-text-subtle); }
+    .type-meta .px   { font-size: 11px; color: var(--color-text-faint); }
+
+    .type-specimen { overflow: hidden; }
+
+    .font-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-10);
+    }
+
+    .font-block {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+    }
+
+    .font-name {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-brand);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-4);
+    }
+
+    .font-specimen {
+      font-size: var(--text-xl);
+      line-height: var(--leading-snug);
+      margin-bottom: var(--space-4);
+    }
+
+    .font-specimen.serif    { font-family: var(--font-serif); }
+    .font-specimen.reading  { font-family: var(--font-reading); }
+    .font-specimen.ui       { font-family: var(--font-ui); }
+
+    .font-charset {
+      font-size: var(--text-sm);
+      color: var(--color-text-subtle);
+      letter-spacing: 0.02em;
+    }
+
+    .font-charset.serif   { font-family: var(--font-serif); }
+    .font-charset.reading { font-family: var(--font-reading); }
+    .font-charset.ui      { font-family: var(--font-ui); }
+
+    .font-roles {
+      margin-top: var(--space-4);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       SPACING
+    ============================================================ */
+    .spacing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--space-10);
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+    }
+
+    .spacing-table th {
+      text-align: left;
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 2px solid var(--color-border);
+      font-weight: 600;
+      font-size: var(--text-xs);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-subtle);
+    }
+
+    .spacing-table td {
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--parchment-200);
+      vertical-align: middle;
+    }
+
+    .spacing-table tr:last-child td { border-bottom: none; }
+
+    .space-bar-wrap { display: flex; align-items: center; gap: var(--space-3); }
+    .space-bar {
+      height: 20px;
+      background: var(--sienna-300);
+      border-radius: 3px;
+      opacity: 0.7;
+    }
+    .space-label { font-family: 'SF Mono', monospace; font-size: var(--text-xs); color: var(--color-text-subtle); }
+
+    code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.9em;
+      background: var(--parchment-200);
+      color: var(--sienna-700);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    /* ============================================================
+       COMPONENTS
+    ============================================================ */
+    .component-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-16);
+      margin-top: var(--space-10);
+    }
+
+    .component-section-title {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .component-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+
+    /* — Buttons — */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-ui);
+      font-weight: 500;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition:
+        background-color var(--duration-fast) var(--ease-standard),
+        color            var(--duration-fast) var(--ease-standard),
+        box-shadow       var(--duration-fast) var(--ease-standard),
+        transform        var(--duration-fast) var(--ease-standard);
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .btn:active { transform: scale(0.98); }
+
+    .btn-sm  { font-size: var(--text-sm); padding: 7px var(--space-4); }
+    .btn-md  { font-size: var(--text-sm); padding: 10px var(--space-6); }
+    .btn-lg  { font-size: var(--text-base); padding: 14px var(--space-8); }
+
+    .btn-primary {
+      background: var(--color-brand);
+      color: #fff;
+      box-shadow: var(--shadow-xs), inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+    .btn-primary:hover {
+      background: var(--sienna-700);
+      box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-brand);
+      box-shadow: inset 0 0 0 1.5px var(--sienna-300);
+    }
+    .btn-secondary:hover {
+      background: var(--color-brand-light);
+      box-shadow: inset 0 0 0 1.5px var(--color-brand);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--color-text-subtle);
+      box-shadow: none;
+    }
+    .btn-ghost:hover {
+      background: var(--parchment-200);
+      color: var(--color-text);
+    }
+
+    .btn-gold {
+      background: var(--gold-500);
+      color: #fff;
+      box-shadow: var(--shadow-xs), inset 0 1px 0 rgba(255,255,255,0.14);
+    }
+    .btn-gold:hover { background: var(--gold-700); }
+
+    .btn-sage {
+      background: var(--sage-500);
+      color: #fff;
+      box-shadow: var(--shadow-xs), inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+    .btn-sage:hover { background: var(--sage-700); }
+
+    .btn-danger {
+      background: transparent;
+      color: #c0392b;
+      box-shadow: inset 0 0 0 1.5px #e8a09a;
+    }
+    .btn-danger:hover { background: #fdf0ee; }
+
+    .btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* — Inputs — */
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .field-label {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text);
+      font-family: var(--font-ui);
+    }
+
+    .field-hint {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      font-family: var(--font-ui);
+      margin-top: calc(-1 * var(--space-1));
+    }
+
+    .input {
+      width: 100%;
+      font-family: var(--font-reading);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background: #fff;
+      border: 1.5px solid var(--parchment-300);
+      border-radius: var(--radius-md);
+      padding: var(--space-3) var(--space-4);
+      outline: none;
+      line-height: var(--leading-normal);
+      transition:
+        border-color var(--duration-fast) var(--ease-standard),
+        box-shadow   var(--duration-fast) var(--ease-standard);
+    }
+
+    .input::placeholder { color: var(--ink-300); }
+
+    .input:focus {
+      border-color: var(--color-brand);
+      box-shadow: 0 0 0 3px rgba(168, 76, 57, 0.12);
+    }
+
+    .input:hover:not(:focus) { border-color: var(--ink-300); }
+
+    textarea.input {
+      resize: vertical;
+      min-height: 96px;
+      font-family: var(--font-reading);
+      line-height: var(--leading-reading);
+    }
+
+    /* — Cards — */
+    .card {
+      background: #fff;
+      border: 1px solid var(--parchment-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-8);
+      transition:
+        box-shadow   var(--duration-default) var(--ease-standard),
+        transform    var(--duration-default) var(--ease-standard),
+        border-color var(--duration-default) var(--ease-standard);
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--sienna-300);
+    }
+
+    .card-eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-brand);
+      margin-bottom: var(--space-3);
+      font-family: var(--font-ui);
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      line-height: var(--leading-snug);
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+
+    .card-body {
+      font-family: var(--font-reading);
+      font-size: var(--text-base);
+      line-height: var(--leading-reading);
+      color: var(--color-text-subtle);
+      margin-bottom: var(--space-6);
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+
+    .card-meta {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      font-family: var(--font-ui);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+    }
+
+    /* — Quote block — */
+    .quote-block {
+      border-left: 3px solid var(--color-brand);
+      padding: var(--space-6) var(--space-8);
+      background: var(--sienna-100);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: var(--space-6) 0;
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      font-style: italic;
+      line-height: var(--leading-reading);
+      color: var(--ink-800);
+      margin-bottom: var(--space-3);
+    }
+
+    .quote-attr {
+      font-size: var(--text-sm);
+      color: var(--color-text-subtle);
+      font-family: var(--font-ui);
+    }
+
+    /* — Tags / Badges — */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+    }
+
+    .tag-sienna { background: var(--sienna-100); color: var(--sienna-700); }
+    .tag-gold   { background: var(--gold-100);   color: var(--gold-700);   }
+    .tag-sage   { background: var(--sage-100);   color: var(--sage-700);   }
+    .tag-ink    { background: var(--ink-100);    color: var(--ink-700);    }
+
+    /* — Session progress bar — */
+    .progress-wrap {
+      background: var(--parchment-200);
+      border-radius: var(--radius-full);
+      height: 6px;
+      overflow: hidden;
+      margin: var(--space-4) 0;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--sienna-500), var(--gold-500));
+      border-radius: var(--radius-full);
+      transition: width var(--duration-slow) var(--ease-decelerate);
+    }
+
+    /* — Session card (special variant) — */
+    .session-card {
+      background: var(--ink-900);
+      color: var(--parchment-100);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .session-card::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(168,76,57,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .session-eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sienna-300);
+      margin-bottom: var(--space-3);
+    }
+
+    .session-title {
+      font-family: var(--font-serif);
+      font-size: var(--text-2xl);
+      font-weight: 500;
+      line-height: var(--leading-snug);
+      color: var(--parchment-50);
+      margin-bottom: var(--space-4);
+    }
+
+    .session-body {
+      font-family: var(--font-reading);
+      font-size: var(--text-base);
+      line-height: var(--leading-reading);
+      color: var(--ink-300);
+      margin-bottom: var(--space-6);
+    }
+
+    /* ============================================================
+       MOTION
+    ============================================================ */
+    .motion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-10);
+    }
+
+    .motion-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+    }
+
+    .motion-demo {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .motion-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: var(--radius-full);
+      background: var(--color-brand);
+    }
+
+    .motion-label {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: var(--space-1);
+    }
+
+    .motion-value {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      font-family: 'SF Mono', monospace;
+    }
+
+    .motion-use {
+      font-size: var(--text-xs);
+      color: var(--color-text-subtle);
+      margin-top: var(--space-2);
+      line-height: 1.5;
+    }
+
+    /* Motion demo hover triggers */
+    .motion-card:hover .motion-dot-fast      { transition: transform var(--duration-fast)       var(--ease-standard); transform: translateX(28px); }
+    .motion-card:hover .motion-dot-default   { transition: transform var(--duration-default)     var(--ease-standard); transform: translateX(28px); }
+    .motion-card:hover .motion-dot-slow      { transition: transform var(--duration-slow)        var(--ease-standard); transform: translateX(28px); }
+    .motion-card:hover .motion-dot-deliberate{ transition: transform var(--duration-deliberate)  var(--ease-gentle);   transform: translateX(28px); }
+
+    .motion-dot { transition: transform var(--duration-fast) var(--ease-standard); }
+
+    /* ============================================================
+       VOICE & TONE
+    ============================================================ */
+    .tone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-10);
+    }
+
+    .tone-card {
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-8);
+      border: 1px solid;
+    }
+
+    .tone-card.do {
+      background: var(--sage-100);
+      border-color: var(--sage-300);
+    }
+
+    .tone-card.dont {
+      background: var(--sienna-100);
+      border-color: var(--sienna-300);
+    }
+
+    .tone-header {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-4);
+    }
+
+    .tone-card.do   .tone-header { color: var(--sage-700); }
+    .tone-card.dont .tone-header { color: var(--sienna-700); }
+
+    .tone-example {
+      font-family: var(--font-reading);
+      font-size: var(--text-base);
+      line-height: var(--leading-reading);
+      margin-bottom: var(--space-3);
+    }
+
+    .tone-card.do   .tone-example { color: var(--sage-900, var(--ink-800)); }
+    .tone-card.dont .tone-example { color: var(--sienna-900); }
+
+    .tone-note {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--color-text-faint);
+    }
+
+    .tone-card.do   .tone-note { color: var(--sage-700); opacity: 0.75; }
+    .tone-card.dont .tone-note { color: var(--sienna-700); opacity: 0.75; text-decoration: line-through; }
+
+    .word-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-6);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .doc-footer {
+      text-align: center;
+      padding: var(--space-16) 0;
+      color: var(--color-text-faint);
+      font-size: var(--text-sm);
+      font-family: var(--font-ui);
+    }
+
+    .doc-footer strong {
+      font-family: var(--font-serif);
+      color: var(--color-text-subtle);
+    }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .mt-2  { margin-top: var(--space-2); }
+    .mt-4  { margin-top: var(--space-4); }
+    .mt-6  { margin-top: var(--space-6); }
+    .mt-8  { margin-top: var(--space-8); }
+    .mt-10 { margin-top: var(--space-10); }
+    .mt-12 { margin-top: var(--space-12); }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: var(--space-8) 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+
+    @media (max-width: 640px) {
+      .two-col { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .container { padding: 0 var(--space-5); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================
+       NAVIGATION
+  =================================================== -->
+  <nav class="site-nav">
+    <a class="nav-brand" href="#">Happy<span>Souls</span></a>
+    <ul class="nav-links">
+      <li><a href="#principles">Principles</a></li>
+      <li><a href="#color">Color</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#spacing">Spacing</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#motion">Motion</a></li>
+      <li><a href="#voice">Voice</a></li>
+    </ul>
+    <span class="badge-preview">v 0.1</span>
+  </nav>
+
+  <!-- ===================================================
+       HERO
+  =================================================== -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">Design System</p>
+      <h1 class="hero-title">Built for<br><em>narrative dignity</em></h1>
+      <p class="hero-sub">
+        A complete visual language for HappySouls — derived from the product's
+        core values: warmth, continuity, craftsmanship, and the preservation of
+        human voice.
+      </p>
+      <div class="hero-meta">
+        <span class="hero-meta-item"><strong>Version</strong> 0.1 — Foundation</span>
+        <span class="hero-meta-item"><strong>Fonts</strong> Playfair Display · Lora · Inter</span>
+        <span class="hero-meta-item"><strong>Grid</strong> 8pt base · 12 col</span>
+        <span class="hero-meta-item"><strong>Status</strong> In progress</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       DESIGN PRINCIPLES
+  =================================================== -->
+  <section class="section" id="principles">
+    <div class="container">
+      <p class="section-label">01 — Principles</p>
+      <h2 class="section-title">Five design values</h2>
+      <p class="section-body">
+        Every visual decision — spacing, color, motion, type — should be measurable
+        against these five principles. If a choice conflicts, it needs justification.
+      </p>
+
+      <div class="principles-grid">
+        <div class="principle-card">
+          <p class="principle-number">01</p>
+          <h3 class="principle-name">Literary</h3>
+          <p class="principle-desc">
+            The interface should feel like a well-made book — weighted paper, considered
+            typography, generous white space. Never a dashboard. Never a feed.
+          </p>
+        </div>
+        <div class="principle-card">
+          <p class="principle-number">02</p>
+          <h3 class="principle-name">Warm</h3>
+          <p class="principle-desc">
+            Cold blues and hard whites belong to productivity tools. HappySouls
+            uses parchment, sienna, and amber — the palette of memory itself.
+          </p>
+        </div>
+        <div class="principle-card">
+          <p class="principle-number">03</p>
+          <h3 class="principle-name">Quiet</h3>
+          <p class="principle-desc">
+            Restraint is a feature. No hover animations that celebrate themselves,
+            no color that shouts. The person's story is the loudest thing on the page.
+          </p>
+        </div>
+        <div class="principle-card">
+          <p class="principle-number">04</p>
+          <h3 class="principle-name">Deliberate</h3>
+          <p class="principle-desc">
+            Interactions move at a human pace. Transitions are slow enough to feel
+            considered — they mirror the thoughtfulness the product asks of its users.
+          </p>
+        </div>
+        <div class="principle-card">
+          <p class="principle-number">05</p>
+          <h3 class="principle-name">Timeless</h3>
+          <p class="principle-desc">
+            This product will be used across decades of a person's life. The design
+            must not feel dated in five years. No trends, no novelty — only endurance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       COLOR SYSTEM
+  =================================================== -->
+  <section class="section" id="color">
+    <div class="container">
+      <p class="section-label">02 — Color</p>
+      <h2 class="section-title">A palette of memory</h2>
+      <p class="section-body">
+        Four families, each with a role. Parchment grounds the interface.
+        Ink carries meaning. Sienna is the soul of the brand. Gold and Sage
+        support depth and continuity.
+      </p>
+
+      <!-- Parchment -->
+      <div class="palette-group">
+        <p class="palette-group-name">Parchment — Backgrounds &amp; Surfaces</p>
+        <div class="palette-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#FDFAF5;"></div>
+            <p class="swatch-name">50</p>
+            <p class="swatch-hex">#FDFAF5</p>
+            <p class="swatch-usage">Page bg</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#F7F1E6;"></div>
+            <p class="swatch-name">100</p>
+            <p class="swatch-hex">#F7F1E6</p>
+            <p class="swatch-usage">Surface</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#EDE3D2;"></div>
+            <p class="swatch-name">200</p>
+            <p class="swatch-hex">#EDE3D2</p>
+            <p class="swatch-usage">Alt surface</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#DFD2BB;"></div>
+            <p class="swatch-name">300</p>
+            <p class="swatch-hex">#DFD2BB</p>
+            <p class="swatch-usage">Borders</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ink -->
+      <div class="palette-group">
+        <p class="palette-group-name">Ink — Text &amp; UI Chrome</p>
+        <div class="palette-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#1A1612;"></div>
+            <p class="swatch-name">900</p>
+            <p class="swatch-hex">#1A1612</p>
+            <p class="swatch-usage">Primary text</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#2E2820;"></div>
+            <p class="swatch-name">800</p>
+            <p class="swatch-hex">#2E2820</p>
+            <p class="swatch-usage">Dark surface</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#45392F;"></div>
+            <p class="swatch-name">700</p>
+            <p class="swatch-hex">#45392F</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#7A6E65;"></div>
+            <p class="swatch-name">500</p>
+            <p class="swatch-hex">#7A6E65</p>
+            <p class="swatch-usage">Subtle text</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#B5ABA4;"></div>
+            <p class="swatch-name">300</p>
+            <p class="swatch-hex">#B5ABA4</p>
+            <p class="swatch-usage">Placeholder</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#EBE6E1;"></div>
+            <p class="swatch-name">100</p>
+            <p class="swatch-hex">#EBE6E1</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sienna -->
+      <div class="palette-group">
+        <p class="palette-group-name">Sienna — Brand / Primary Actions</p>
+        <div class="palette-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#4A1E14;"></div>
+            <p class="swatch-name">900</p>
+            <p class="swatch-hex">#4A1E14</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#7D3628;"></div>
+            <p class="swatch-name">700</p>
+            <p class="swatch-hex">#7D3628</p>
+            <p class="swatch-usage">Hover state</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#A84C39; border: 2px solid #7D3628;"></div>
+            <p class="swatch-name">500 ★</p>
+            <p class="swatch-hex">#A84C39</p>
+            <p class="swatch-usage">Primary brand</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#CE9082;"></div>
+            <p class="swatch-name">300</p>
+            <p class="swatch-hex">#CE9082</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#F5E5E0;"></div>
+            <p class="swatch-name">100</p>
+            <p class="swatch-hex">#F5E5E0</p>
+            <p class="swatch-usage">Tinted bg</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gold -->
+      <div class="palette-group">
+        <p class="palette-group-name">Gold — Wisdom, Legacy &amp; Celebration</p>
+        <div class="palette-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#8B6820;"></div>
+            <p class="swatch-name">700</p>
+            <p class="swatch-hex">#8B6820</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#B8892E;"></div>
+            <p class="swatch-name">500</p>
+            <p class="swatch-hex">#B8892E</p>
+            <p class="swatch-usage">Gold CTA</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#D4AE6A;"></div>
+            <p class="swatch-name">300</p>
+            <p class="swatch-hex">#D4AE6A</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#F5EDDA;"></div>
+            <p class="swatch-name">100</p>
+            <p class="swatch-hex">#F5EDDA</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sage -->
+      <div class="palette-group">
+        <p class="palette-group-name">Sage — Life, Continuity &amp; Positive States</p>
+        <div class="palette-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#3A5242;"></div>
+            <p class="swatch-name">700</p>
+            <p class="swatch-hex">#3A5242</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#527660;"></div>
+            <p class="swatch-name">500</p>
+            <p class="swatch-hex">#527660</p>
+            <p class="swatch-usage">Success</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#8AAE98;"></div>
+            <p class="swatch-name">300</p>
+            <p class="swatch-hex">#8AAE98</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#E2EEE7;"></div>
+            <p class="swatch-name">100</p>
+            <p class="swatch-hex">#E2EEE7</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semantic tokens -->
+      <p class="section-label mt-12" style="margin-bottom: var(--space-4);">Semantic Tokens</p>
+      <div class="semantic-tokens">
+        <div class="token-row">
+          <div class="token-dot" style="background: var(--parchment-50);"></div>
+          <div class="token-info">
+            <p class="token-name">--color-background</p>
+            <p class="token-desc">Page background</p>
+          </div>
+        </div>
+        <div class="token-row">
+          <div class="token-dot" style="background: var(--parchment-100);"></div>
+          <div class="token-info">
+            <p class="token-name">--color-surface</p>
+            <p class="token-desc">Cards, panels</p>
+          </div>
+        </div>
+        <div class="token-row">
+          <div class="token-dot" style="background: var(--parchment-300);"></div>
+          <div class="token-info">
+            <p class="token-name">--color-border</p>
+            <p class="token-desc">Dividers, outlines</p>
+          </div>
+        </div>
+        <div class="token-row">
+          <div class="token-dot" style="background: var(--ink-900);"></div>
+          <div class="token-info">
+            <p class="token-name">--color-text</p>
+            <p class="token-desc">Primary text</p>
+          </div>
+        </div>
+        <div class="token-row">
+          <div class="token-dot" style="background: var(--ink-500);"></div>
+          <div class="token-info">
+            <p class="token-name">--color-text-subtle</p>
+            <p class="token-desc">Secondary text</p>
+          </div>
+        </div>
+        <div class="token-row">
+          <div class="token-dot" style="background: var(--ink-300);"></div>
+          <div class="token-info">
+            <p class="token-name">--color-text-faint</p>
+            <p class="token-desc">Labels, captions</p>
+          </div>
+        </div>
+        <div class="token-row">
+          <div class="token-dot" style="background: var(--sienna-500);"></div>
+          <div class="token-info">
+            <p class="token-name">--color-brand</p>
+            <p class="token-desc">Primary actions</p>
+          </div>
+        </div>
+        <div class="token-row">
+          <div class="token-dot" style="background: var(--sienna-100);"></div>
+          <div class="token-info">
+            <p class="token-name">--color-brand-light</p>
+            <p class="token-desc">Tinted backgrounds</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       TYPOGRAPHY
+  =================================================== -->
+  <section class="section" id="typography">
+    <div class="container">
+      <p class="section-label">03 — Typography</p>
+      <h2 class="section-title">Three voices, one story</h2>
+      <p class="section-body">
+        Playfair Display carries authority and beauty in display contexts. Lora
+        carries the reader through long-form content. Inter handles the quiet
+        work of UI chrome — labels, navigation, metadata.
+      </p>
+
+      <!-- Font families -->
+      <div class="font-card">
+        <div class="font-block">
+          <p class="font-name">Playfair Display — Display / Headings</p>
+          <p class="font-specimen serif">The Meaning of a Life</p>
+          <p class="font-specimen serif" style="font-style:italic; font-size: var(--text-lg);">Before stories are lost, capture them.</p>
+          <p class="font-charset serif">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 — &amp; ' " , .</p>
+          <p class="font-roles">Used for: Page titles, section headers, card titles, pull quotes.<br>Weights: 400, 500, 600, 700 &amp; italic variants.</p>
+        </div>
+        <div class="font-block">
+          <p class="font-name">Lora — Body / Reading</p>
+          <p class="font-specimen reading">The summer my father retired, he started telling stories I had never heard before. Each one ended the same way — quietly, as if he was surprised himself.</p>
+          <p class="font-charset reading">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 — &amp; ' " , .</p>
+          <p class="font-roles">Used for: Body text, interview transcripts, biography excerpts, descriptions.<br>Weights: 400, 500 &amp; italic variants.</p>
+        </div>
+        <div class="font-block">
+          <p class="font-name">Inter — UI / Labels</p>
+          <p class="font-specimen ui" style="font-size: var(--text-lg); font-weight: 500;">Session · Chapter · Archive</p>
+          <p class="font-charset ui">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 — &amp; ' " , .</p>
+          <p class="font-roles">Used for: Navigation, buttons, labels, form fields, metadata, tags.<br>Weights: 300, 400, 500, 600.</p>
+        </div>
+      </div>
+
+      <!-- Type scale -->
+      <p class="section-label mt-12" style="margin-bottom: var(--space-4);">Type Scale</p>
+      <div class="type-scale">
+        <div class="type-row">
+          <div class="type-meta">
+            <p class="size">5xl</p>
+            <p class="px">61px / 3.815rem</p>
+          </div>
+          <div class="type-specimen" style="font-family: var(--font-serif); font-size: var(--text-5xl); font-weight: 600; line-height: var(--leading-tight); letter-spacing: -0.03em;">Tell your life.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <p class="size">4xl</p>
+            <p class="px">49px / 3.052rem</p>
+          </div>
+          <div class="type-specimen" style="font-family: var(--font-serif); font-size: var(--text-4xl); font-weight: 600; line-height: var(--leading-tight); letter-spacing: -0.03em;">Your life, structured.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <p class="size">3xl</p>
+            <p class="px">39px / 2.441rem</p>
+          </div>
+          <div class="type-specimen" style="font-family: var(--font-serif); font-size: var(--text-3xl); font-weight: 500; line-height: var(--leading-tight); letter-spacing: -0.02em;">The Early Years, 1944–1962</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <p class="size">2xl</p>
+            <p class="px">31px / 1.953rem</p>
+          </div>
+          <div class="type-specimen" style="font-family: var(--font-serif); font-size: var(--text-2xl); font-weight: 500; line-height: var(--leading-snug); letter-spacing: -0.02em;">A house in the hills, a mother who sang.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <p class="size">xl</p>
+            <p class="px">25px / 1.563rem</p>
+          </div>
+          <div class="type-specimen" style="font-family: var(--font-serif); font-size: var(--text-xl); font-weight: 500; line-height: var(--leading-snug);">Session 12 — Martinique, 1970s</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <p class="size">lg</p>
+            <p class="px">20px / 1.25rem</p>
+          </div>
+          <div class="type-specimen" style="font-family: var(--font-reading); font-size: var(--text-lg); line-height: var(--leading-reading);">The conversation turned when she mentioned the tobacco shop. I wrote it down — the smell of the place, the way her voice shifted.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <p class="size">base</p>
+            <p class="px">16px / 1rem</p>
+          </div>
+          <div class="type-specimen" style="font-family: var(--font-reading); font-size: var(--text-base); line-height: var(--leading-reading);">This session covers the years 1952 to 1960. We will focus on childhood memories, early school experiences, and family dynamics during that period. You can pause at any time.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <p class="size">sm</p>
+            <p class="px">14px / 0.875rem</p>
+          </div>
+          <div class="type-specimen" style="font-family: var(--font-ui); font-size: var(--text-sm); line-height: var(--leading-normal); font-weight: 500;">Session started 14 April 2026 · 38 minutes · 3 chapters covered</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <p class="size">xs</p>
+            <p class="px">12px / 0.75rem</p>
+          </div>
+          <div class="type-specimen" style="font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-subtle);">Childhood · 1940s · Family</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SPACING & LAYOUT
+  =================================================== -->
+  <section class="section" id="spacing">
+    <div class="container">
+      <p class="section-label">04 — Spacing &amp; Layout</p>
+      <h2 class="section-title">The 8-point grid</h2>
+      <p class="section-body">
+        All spacing values are multiples of 8px. Generous breathing room is not
+        a luxury — it signals that the product takes its time. Cramped UI
+        contradicts the product's values.
+      </p>
+
+      <table class="spacing-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Visual</th>
+            <th>Common uses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>--space-1</code></td>
+            <td>4px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:4px;"></div></div></td>
+            <td>Icon gap, tight label spacing</td>
+          </tr>
+          <tr>
+            <td><code>--space-2</code></td>
+            <td>8px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:8px;"></div></div></td>
+            <td>Tag padding, inline gap</td>
+          </tr>
+          <tr>
+            <td><code>--space-3</code></td>
+            <td>12px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:12px;"></div></div></td>
+            <td>Table cell, small gaps</td>
+          </tr>
+          <tr>
+            <td><code>--space-4</code></td>
+            <td>16px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:16px;"></div></div></td>
+            <td>Button padding (sm/md), label gap</td>
+          </tr>
+          <tr>
+            <td><code>--space-6</code></td>
+            <td>24px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:24px;"></div></div></td>
+            <td>Between elements, nav padding</td>
+          </tr>
+          <tr>
+            <td><code>--space-8</code></td>
+            <td>32px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:32px;"></div></div></td>
+            <td>Card padding, section gap</td>
+          </tr>
+          <tr>
+            <td><code>--space-12</code></td>
+            <td>48px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:48px;"></div></div></td>
+            <td>Between component groups</td>
+          </tr>
+          <tr>
+            <td><code>--space-16</code></td>
+            <td>64px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:64px;"></div></div></td>
+            <td>Section-level separation</td>
+          </tr>
+          <tr>
+            <td><code>--space-24</code></td>
+            <td>96px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:96px;"></div></div></td>
+            <td>Section top/bottom padding</td>
+          </tr>
+          <tr>
+            <td><code>--space-32</code></td>
+            <td>128px</td>
+            <td><div class="space-bar-wrap"><div class="space-bar" style="width:120px;"></div><span class="space-label">128px</span></div></td>
+            <td>Hero padding, large page rhythm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="divider" />
+
+      <div class="two-col">
+        <div>
+          <p class="font-name">Max content width</p>
+          <p style="font-family: var(--font-reading); color: var(--color-text-subtle); margin-top: var(--space-2); line-height: var(--leading-reading);">
+            <strong style="font-weight: 500; color: var(--color-text);">1080px</strong> — container max-width.<br>
+            Prose lines are capped at <strong style="font-weight: 500; color: var(--color-text);">65ch</strong> for optimal reading comfort (~650px at base size).
+          </p>
+        </div>
+        <div>
+          <p class="font-name">Border radius</p>
+          <div style="display: flex; gap: var(--space-4); margin-top: var(--space-2); flex-wrap: wrap; align-items: flex-end;">
+            <div style="text-align:center;">
+              <div style="width:40px; height:40px; border-radius: 4px; background: var(--sienna-300);"></div>
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint); margin-top: 4px;">sm 4px</p>
+            </div>
+            <div style="text-align:center;">
+              <div style="width:40px; height:40px; border-radius: 8px; background: var(--sienna-300);"></div>
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint); margin-top: 4px;">md 8px</p>
+            </div>
+            <div style="text-align:center;">
+              <div style="width:40px; height:40px; border-radius: 16px; background: var(--sienna-300);"></div>
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint); margin-top: 4px;">lg 16px</p>
+            </div>
+            <div style="text-align:center;">
+              <div style="width:40px; height:40px; border-radius: 24px; background: var(--sienna-300);"></div>
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint); margin-top: 4px;">xl 24px</p>
+            </div>
+            <div style="text-align:center;">
+              <div style="width:40px; height:40px; border-radius: 9999px; background: var(--sienna-300);"></div>
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint); margin-top: 4px;">full</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       COMPONENTS
+  =================================================== -->
+  <section class="section" id="components">
+    <div class="container">
+      <p class="section-label">05 — Components</p>
+      <h2 class="section-title">The building blocks</h2>
+      <p class="section-body">
+        Every component is derived from the token system. Hover states are visible
+        but never startling. Focus states meet WCAG 2.1 AA contrast requirements.
+      </p>
+
+      <div class="component-grid">
+
+        <!-- Buttons -->
+        <div>
+          <h3 class="component-section-title">Buttons</h3>
+
+          <p style="font-size: var(--text-sm); color: var(--color-text-faint); margin-bottom: var(--space-3); font-family: var(--font-ui);">Sizes — md (default)</p>
+          <div class="component-row">
+            <button class="btn btn-primary btn-lg">Begin Session</button>
+            <button class="btn btn-primary btn-md">Begin Session</button>
+            <button class="btn btn-primary btn-sm">Begin Session</button>
+          </div>
+
+          <p style="font-size: var(--text-sm); color: var(--color-text-faint); margin-bottom: var(--space-3); font-family: var(--font-ui); margin-top: var(--space-6);">Variants</p>
+          <div class="component-row">
+            <button class="btn btn-primary btn-md">Primary</button>
+            <button class="btn btn-secondary btn-md">Secondary</button>
+            <button class="btn btn-ghost btn-md">Ghost</button>
+            <button class="btn btn-gold btn-md">Publish Chapter</button>
+            <button class="btn btn-sage btn-md">Chapter Complete</button>
+            <button class="btn btn-danger btn-md">Delete Archive</button>
+          </div>
+
+          <div class="component-row" style="margin-top: var(--space-4);">
+            <button class="btn btn-primary btn-md" disabled>Disabled</button>
+            <button class="btn btn-secondary btn-md" disabled>Disabled</button>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div>
+          <h3 class="component-section-title">Tags &amp; Labels</h3>
+          <div class="component-row">
+            <span class="tag tag-sienna">Childhood</span>
+            <span class="tag tag-gold">Career</span>
+            <span class="tag tag-sage">Family</span>
+            <span class="tag tag-ink">1970s</span>
+            <span class="tag tag-sienna">Turning Point</span>
+            <span class="tag tag-gold">Legacy</span>
+            <span class="tag tag-sage">Belief Shift</span>
+          </div>
+        </div>
+
+        <!-- Form inputs -->
+        <div>
+          <h3 class="component-section-title">Form Fields</h3>
+          <div class="two-col" style="gap: var(--space-6);">
+            <div class="field">
+              <label class="field-label">Your name</label>
+              <input class="input" type="text" placeholder="e.g. Margaret" />
+            </div>
+            <div class="field">
+              <label class="field-label">Year of birth</label>
+              <input class="input" type="text" placeholder="e.g. 1942" />
+            </div>
+          </div>
+          <div class="field mt-6" style="max-width: 100%;">
+            <label class="field-label">Tell me about a place from your childhood</label>
+            <p class="field-hint">Take your time. There's no right answer.</p>
+            <textarea class="input" placeholder="I remember a house on a long road, where the summers lasted forever..." rows="4"></textarea>
+          </div>
+        </div>
+
+        <!-- Quote block -->
+        <div>
+          <h3 class="component-section-title">Quote &amp; Passage Blocks</h3>
+          <div class="quote-block">
+            <p class="quote-text">
+              "There was a tobacco shop on the corner. My father went every Saturday morning, and sometimes he took me. I don't remember what he bought — only the smell of the place, and how tall he seemed."
+            </p>
+            <p class="quote-attr">— Session 4, recorded April 2026</p>
+          </div>
+        </div>
+
+        <!-- Progress -->
+        <div>
+          <h3 class="component-section-title">Life Progress Indicator</h3>
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-8);">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+              <p style="font-family: var(--font-ui); font-size: var(--text-sm); font-weight: 600; color: var(--color-text);">Life archive coverage</p>
+              <p style="font-family: var(--font-ui); font-size: var(--text-xs); color: var(--color-brand); font-weight: 600;">34%</p>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar" style="width: 34%;"></div>
+            </div>
+            <p style="font-family: var(--font-ui); font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-2);">12 of 35 estimated chapters covered · 4 sessions recorded</p>
+          </div>
+        </div>
+
+        <!-- Story card -->
+        <div>
+          <h3 class="component-section-title">Cards</h3>
+          <div class="card-grid">
+            <div class="card">
+              <p class="card-eyebrow">Chapter 3 · Childhood</p>
+              <h3 class="card-title">A House by the Sea</h3>
+              <p class="card-body">
+                The summers in Martinique were different from anything that came after.
+                She remembered the light most of all — the way it arrived early and stayed.
+              </p>
+              <div class="card-footer">
+                <div style="display: flex; gap: var(--space-2);">
+                  <span class="tag tag-sienna">Family</span>
+                  <span class="tag tag-ink">1960s</span>
+                </div>
+                <p class="card-meta">Last edited 3 days ago</p>
+              </div>
+            </div>
+
+            <div class="card" style="cursor:pointer;">
+              <p class="card-eyebrow">Session · April 14, 2026</p>
+              <h3 class="card-title">The Martinique Years</h3>
+              <p class="card-body">
+                Covered: childhood home, school friends, the summer of 1967, her mother's illness,
+                and the decision to leave.
+              </p>
+              <div class="progress-wrap" style="margin-bottom: var(--space-4);">
+                <div class="progress-bar" style="width: 62%;"></div>
+              </div>
+              <div class="card-footer">
+                <p class="card-meta">38 min · 6 chapters touched</p>
+                <button class="btn btn-secondary btn-sm">Continue</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dark session card -->
+          <div class="session-card mt-6">
+            <p class="session-eyebrow">Now Playing</p>
+            <h3 class="session-title">Session 12 — Early Career</h3>
+            <p class="session-body">
+              We're exploring the years between 1968 and 1975. Tell me about your first real job,
+              and what you remember of that first Monday morning.
+            </p>
+            <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center;">
+              <button class="btn btn-primary btn-md" style="background: var(--sienna-500);">Continue session</button>
+              <button class="btn btn-ghost btn-md" style="color: var(--ink-300);">Pause</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shadows -->
+        <div>
+          <h3 class="component-section-title">Elevation &amp; Shadows</h3>
+          <div class="component-row" style="align-items: flex-end; gap: var(--space-8);">
+            <div style="background:#fff; border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-xs); text-align:center; min-width:100px;">
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint); font-family: var(--font-ui);">xs</p>
+              <p style="font-size: var(--text-xs); color: var(--color-text-subtle); font-family: monospace; margin-top:4px;">flush</p>
+            </div>
+            <div style="background:#fff; border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-sm); text-align:center; min-width:100px;">
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint); font-family: var(--font-ui);">sm</p>
+              <p style="font-size: var(--text-xs); color: var(--color-text-subtle); font-family: monospace; margin-top:4px;">cards</p>
+            </div>
+            <div style="background:#fff; border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-md); text-align:center; min-width:100px;">
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint); font-family: var(--font-ui);">md</p>
+              <p style="font-size: var(--text-xs); color: var(--color-text-subtle); font-family: monospace; margin-top:4px;">hover</p>
+            </div>
+            <div style="background:#fff; border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-lg); text-align:center; min-width:100px;">
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint); font-family: var(--font-ui);">lg</p>
+              <p style="font-size: var(--text-xs); color: var(--color-text-subtle); font-family: monospace; margin-top:4px;">modals</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       MOTION
+  =================================================== -->
+  <section class="section" id="motion">
+    <div class="container">
+      <p class="section-label">06 — Motion</p>
+      <h2 class="section-title">Slow is respectful</h2>
+      <p class="section-body">
+        Motion in HappySouls is deliberate. Transitions take their time —
+        not because they're indulgent, but because the product asks people to
+        slow down. Hover over a card below to see the timing difference.
+      </p>
+
+      <div class="motion-grid">
+        <div class="motion-card">
+          <div class="motion-demo">
+            <div class="motion-dot motion-dot-fast"></div>
+          </div>
+          <p class="motion-label">Fast — 150ms</p>
+          <p class="motion-value">ease-standard</p>
+          <p class="motion-use">Hover states, focus rings, button color changes. Micro-responses that should feel instant.</p>
+        </div>
+        <div class="motion-card">
+          <div class="motion-demo">
+            <div class="motion-dot motion-dot-default"></div>
+          </div>
+          <p class="motion-label">Default — 300ms</p>
+          <p class="motion-value">ease-standard</p>
+          <p class="motion-use">Card reveal, panel expand, dropdown open. The workhorse transition for most UI movement.</p>
+        </div>
+        <div class="motion-card">
+          <div class="motion-demo">
+            <div class="motion-dot motion-dot-slow"></div>
+          </div>
+          <p class="motion-label">Slow — 500ms</p>
+          <p class="motion-value">ease-standard</p>
+          <p class="motion-use">Page transitions, major reveals, chapter navigation. Signals a meaningful context shift.</p>
+        </div>
+        <div class="motion-card">
+          <div class="motion-demo">
+            <div class="motion-dot motion-dot-deliberate"></div>
+          </div>
+          <p class="motion-label">Deliberate — 700ms</p>
+          <p class="motion-value">ease-gentle</p>
+          <p class="motion-use">Session begin, biography publish, emotional milestone moments. Reserved for the important.</p>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="two-col mt-4">
+        <div>
+          <p class="font-name">What motion is not</p>
+          <ul style="font-family: var(--font-reading); font-size: var(--text-base); line-height: var(--leading-reading); color: var(--color-text-subtle); padding-left: var(--space-5); margin-top: var(--space-2);">
+            <li>No bouncy, spring-physics animations</li>
+            <li>No celebration particles or confetti</li>
+            <li>No rotating loaders (use subtle pulse instead)</li>
+            <li>No animations that repeat on loop</li>
+            <li>No transitions under 100ms (feels glitchy)</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-name">Easing reference</p>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-2);">
+            <div>
+              <p style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text-subtle);">Standard</p>
+              <p style="font-size: var(--text-xs); font-family: monospace; color: var(--color-text-faint);">cubic-bezier(0.4, 0.0, 0.2, 1)</p>
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint);">Default for most transitions</p>
+            </div>
+            <div>
+              <p style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text-subtle);">Decelerate (enter)</p>
+              <p style="font-size: var(--text-xs); font-family: monospace; color: var(--color-text-faint);">cubic-bezier(0.0, 0.0, 0.2, 1)</p>
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint);">Elements arriving on screen</p>
+            </div>
+            <div>
+              <p style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text-subtle);">Gentle</p>
+              <p style="font-size: var(--text-xs); font-family: monospace; color: var(--color-text-faint);">cubic-bezier(0.25, 0.1, 0.25, 1)</p>
+              <p style="font-size: var(--text-xs); color: var(--color-text-faint);">Emotional or deliberate moments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       VOICE & TONE
+  =================================================== -->
+  <section class="section" id="voice">
+    <div class="container">
+      <p class="section-label">07 — Voice &amp; Tone</p>
+      <h2 class="section-title">The product speaks quietly</h2>
+      <p class="section-body">
+        The AI biographer has its own voice spec (see <code>ai-biographer-characteristics.md</code>).
+        These guidelines cover the product interface: labels, prompts, empty states, error messages,
+        and onboarding copy.
+      </p>
+
+      <div class="tone-grid">
+        <div class="tone-card do">
+          <p class="tone-header">✓ Write like this</p>
+          <p class="tone-example">"Where would you like to begin today?"</p>
+          <p class="tone-note">Warm, open-ended, patient</p>
+        </div>
+        <div class="tone-card dont">
+          <p class="tone-header">✗ Not like this</p>
+          <p class="tone-example">"Let's get started! Pick a topic to unlock your memories!"</p>
+          <p class="tone-note">Exclamation marks, gamification language, dopamine tricks</p>
+        </div>
+        <div class="tone-card do">
+          <p class="tone-header">✓ Write like this</p>
+          <p class="tone-example">"Session saved. Your words are safe here."</p>
+          <p class="tone-note">Calm, reassuring, specific about what happened</p>
+        </div>
+        <div class="tone-card dont">
+          <p class="tone-header">✗ Not like this</p>
+          <p class="tone-example">"Amazing! Your session has been auto-saved to the cloud ☁️"</p>
+          <p class="tone-note">False enthusiasm, jargon ("cloud"), emoji in serious moments</p>
+        </div>
+        <div class="tone-card do">
+          <p class="tone-header">✓ Write like this</p>
+          <p class="tone-example">"Something went wrong. Your text is still here — try again when you're ready."</p>
+          <p class="tone-note">Honest about the error, reassuring about data safety</p>
+        </div>
+        <div class="tone-card dont">
+          <p class="tone-header">✗ Not like this</p>
+          <p class="tone-example">"Oops! Looks like something broke on our end 😅"</p>
+          <p class="tone-note">Deflective humor, emoji that trivialize a frustrating moment</p>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="two-col mt-4">
+        <div>
+          <p class="font-name">Voice attributes</p>
+          <div class="word-bank">
+            <span class="tag tag-ink">Warm</span>
+            <span class="tag tag-ink">Patient</span>
+            <span class="tag tag-ink">Unhurried</span>
+            <span class="tag tag-ink">Direct</span>
+            <span class="tag tag-ink">Honest</span>
+            <span class="tag tag-ink">Precise</span>
+            <span class="tag tag-ink">Gentle authority</span>
+            <span class="tag tag-ink">Dignified</span>
+            <span class="tag tag-ink">Never performative</span>
+          </div>
+        </div>
+        <div>
+          <p class="font-name">Never use</p>
+          <div class="word-bank">
+            <span class="tag tag-sienna">Amazing</span>
+            <span class="tag tag-sienna">Awesome</span>
+            <span class="tag tag-sienna">Just</span>
+            <span class="tag tag-sienna">Simply</span>
+            <span class="tag tag-sienna">Unlock</span>
+            <span class="tag tag-sienna">Journey 🙄</span>
+            <span class="tag tag-sienna">Empower</span>
+            <span class="tag tag-sienna">Leverage</span>
+            <span class="tag tag-sienna">Seamless</span>
+            <span class="tag tag-sienna">Let's go!</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div>
+        <p class="font-name" style="margin-bottom: var(--space-4);">Sample UI copy — the product in its own voice</p>
+        <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+          <div style="padding: var(--space-4) var(--space-6); background: var(--color-surface); border-radius: var(--radius-md); border-left: 3px solid var(--sage-300);">
+            <p style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-2);">Empty state — no sessions yet</p>
+            <p style="font-family: var(--font-reading); font-size: var(--text-base); color: var(--color-text-subtle); line-height: var(--leading-reading);">"Your archive is waiting. Begin when you're ready — there's no rush, and no wrong place to start."</p>
+          </div>
+          <div style="padding: var(--space-4) var(--space-6); background: var(--color-surface); border-radius: var(--radius-md); border-left: 3px solid var(--gold-300);">
+            <p style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-2);">Chapter published</p>
+            <p style="font-family: var(--font-reading); font-size: var(--text-base); color: var(--color-text-subtle); line-height: var(--leading-reading);">"Chapter three is saved. The people you share it with will be able to read it at their own pace."</p>
+          </div>
+          <div style="padding: var(--space-4) var(--space-6); background: var(--color-surface); border-radius: var(--radius-md); border-left: 3px solid var(--sienna-300);">
+            <p style="font-size: var(--text-xs); font-weight: 600; color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-2);">Returning after a long gap</p>
+            <p style="font-family: var(--font-reading); font-size: var(--text-base); color: var(--color-text-subtle); line-height: var(--leading-reading);">"It's been a while. Last time, we were talking about the summers in Martinique. Would you like to continue there, or start somewhere new?"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       FOOTER
+  =================================================== -->
+  <footer class="doc-footer">
+    <p><strong>HappySouls</strong> Design System · v0.1 Foundation · April 2026</p>
+    <p style="margin-top: var(--space-2);">Derived from <code>vision-ethics.md</code>. All decisions traceable to the product's core values.</p>
+  </footer>
+
+</body>
+</html>
